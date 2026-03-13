@@ -16,11 +16,14 @@ public class MemoryColors {
       matrix.createMatrix();
       matrix.seeMatrix();
       
+      do{
+        System.out.println("==============================");
         System.out.println("Escriba el numero de la carta");
         int position1 = write.nextInt();
         System.out.println("Escriba el numero de la carta");
         int position2 = write.nextInt();
         matrix.compareColor(position1, position2);
+      }while(matrix.getCorrectAcumulator()<5);
     }
     
 }

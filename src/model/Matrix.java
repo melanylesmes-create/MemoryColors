@@ -10,7 +10,16 @@ public class Matrix {
     private Color [][] board;
     private String [] colorName;
     private String [] randomColor;
-        
+    private int correctAcumulator = 0;
+
+    public int getCorrectAcumulator() {
+        return correctAcumulator;
+    }
+
+    public void setCorrectAcumulator(int correctAcumulator) {
+        this.correctAcumulator = correctAcumulator;
+    }
+    
     public void colorAdd(){
         colorName =new String[] {"Blue","Blue","Red","Red",
                                 "Orange","Orange","Yellow","Yellow"
@@ -61,24 +70,27 @@ public class Matrix {
      }
     
     public void compareColor(int position1, int position2){
+
         /* Row se divide por 5 para hallar la fila 0 o la fila 1*/
+        /* Column se le saca el mod de 5 para hallar la columna con el residuo*/
         int row1 = position1 / 5;
         int column1 = position1 % 5;
-        /* Column se le saca el mod de 5 para hallar la columna con el residuo*/
         int row2 = position2 / 5;
         int column2 = position2 % 5;
+        
         /*Los valores es colocan en el board o tablero*/
         Color color1 = board [row1][column1];
         Color color2 = board [row2][column2];
-        /*Comparación entre ambas posiciones*/
         if(color1.toString().equals(color2.toString())){
-        System.out.println("Pareja encontrada!");
-        }else{
-        System.out.println("No son iguales");
+            System.out.println("Pareja encontrada!");
+            correctAcumulatorColor();
+        }else
+            System.out.println("No son iguales");
+
     }
-            
     
+    public void correctAcumulatorColor(){
+        correctAcumulator++;
     }
-    
    
 }
