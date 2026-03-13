@@ -70,7 +70,6 @@ public class Matrix {
      }
     
     public void compareColor(int position1, int position2){
-
         /* Row se divide por 5 para hallar la fila 0 o la fila 1*/
         /* Column se le saca el mod de 5 para hallar la columna con el residuo*/
         int row1 = position1 / 5;
@@ -84,6 +83,7 @@ public class Matrix {
         if(color1.toString().equals(color2.toString())){
             System.out.println("Pareja encontrada!");
             correctAcumulatorColor();
+            
         }else
             System.out.println("No son iguales");
 
