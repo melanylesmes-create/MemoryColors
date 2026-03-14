@@ -30,7 +30,6 @@ public class Player {
         System.out.println("your total score is " + finalScore);
     }
     public void showLoser(int attemptsLeft){
-        System.out.println("**** GAMEOVER " +namePlayer +" *****");
-        System.out.println("your total score is " + attemptsLeft);
+        System.out.println("**** GAME OVER " +namePlayer +" *****");
     }
 }

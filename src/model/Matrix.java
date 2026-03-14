@@ -71,8 +71,7 @@ public class Matrix {
          for(int row = 0; row < board.length; row++){
             for(int colum = 0; colum < board[row].length; colum++){
                 //Para hallar el valor numerico de consola
-                int position = row * 5 + colum;
-               
+                int position = row * 5 + colum;              
                 if(board[row][colum]==null){
                     System.out.print("x ");
                 }else
@@ -83,8 +82,8 @@ public class Matrix {
     }
      
     public boolean compareColor(int position1, int position2){
-        /* Row se divide por 5 para hallar la fila 0 o la fila 1*/
-        // Column se le saca el mod de 5 para hallar la columna con el residuo
+        //Row se divide por 5 para hallar la fila 0 o la fila 1
+        //Column se le saca el mod de 5 para hallar la columna con el residuo
         int row1 = position1 / 5;
         int column1 = position1 % 5;        
         int row2 = position2 / 5;
