@@ -1,29 +1,31 @@
 
 package view;
 
+import controller.PlayController;
 import java.util.Scanner;
 import model.Matrix;
+import model.Player;
+import model.Score;
 
 public class MemoryColors {
 
-    public static void main(String[] args) {
-      Matrix matrix;
-      matrix = new Matrix();
+    public static void main(String[] args) { 
       Scanner write = new Scanner(System.in);
-      //para inicializar un metodo toca llamarlo
+
+      Matrix matrix = new Matrix();
+      Score score =new Score();
+      
+      String namePlayer;
+      System.out.println("---------Welcome to Memory Colors---------");
+      System.out.println("Write your Nickname or name :D");
+      namePlayer = write.next();
+      Player player = new Player(namePlayer); 
+      PlayController playController = new PlayController(player,matrix,score);
       matrix.colorAdd();
       matrix.randomColor();
       matrix.createMatrix();
       matrix.seeMatrix();
       
-      do{
-        System.out.println("==============================");
-        System.out.println("Escriba el numero de la carta");
-        int position1 = write.nextInt();
-        System.out.println("Escriba el numero de la carta");
-        int position2 = write.nextInt();
-        matrix.compareColor(position1, position2);
-      }while(matrix.getCorrectAcumulator()<5);
-    }
+      playController.startGame(player,matrix,score);
     
-}
+}}
