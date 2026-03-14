@@ -14,7 +14,6 @@ public class MemoryColors {
 
       Matrix matrix = new Matrix();
       Score score =new Score();
-      
       String namePlayer;
       System.out.println("---------Welcome to Memory Colors---------");
       System.out.println("Write your Nickname or name :D");

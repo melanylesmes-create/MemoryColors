@@ -11,7 +11,7 @@ public class PlayController {
    private Score score;
    private Matrix matrix;   
    Scanner write = new Scanner(System.in);
-   
+   //Traer los objetos inicializados ya en el main
    public PlayController(Player player, Matrix matrix, Score score){
         this.player = player;
         this.matrix = matrix;
@@ -28,7 +28,7 @@ public class PlayController {
             int position2 = write.nextInt();
             boolean match  =matrix.compareColor(position1, position2);
             correctOrIncorrectMatch(match,score);
-        }while(matrix.getCorrectAcumulator()<5);
+        }while((matrix.getCorrectAcumulator()<5)&&(score.getAttempCounter()>0));
    }
 
    
@@ -45,10 +45,15 @@ public class PlayController {
            System.out.println("Your lost 1 attemp " + score.getAttempCounter());
             if(score.getAttempCounter()==0){
                player.showLoser(score.getAttempCounter());
+               
            }
        }
    }
     
-   public void finishGame(){}
+   public void finishGame(int attemp){
+       if(attemp ==0){
+           System.out.println("----------------------------------------------");
+       }
+   }
    
 }

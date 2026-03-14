@@ -48,7 +48,7 @@ public class Matrix {
             for(int colum=0; colum < board[row].length; colum++){
                 //Como randomColor no es de tipo Color se coloca el  index
                 board[row][colum]=new Color(randomColor[index]);
-                System.out.print(board[row][colum] + " ");
+                //System.out.print(board[row][colum] + " ");
                 index++; 
             }
             System.out.println(" ");
@@ -94,19 +94,28 @@ public class Matrix {
         Color color2 = board [row2][column2];
         
         if(color1.toString().equals(color2.toString())){
+            showColor(row1,column1,row2,column2);
             board[row1][column1]=null;
             board[row2][column2]=null;
-            System.out.println("Pareja encontrada!");
+            System.out.println("-- Found couple --");          
             correctAcumulatorColor();
             modificMatrix();
             return true;
         }else
-            System.out.println("No son iguales");
+            showColor(row1,column1,row2,column2);
+            System.out.println("-- X They are not the same X --");
             return false;
+           
     }
      
     public void correctAcumulatorColor(){
         correctAcumulator++;
     }
    
+    public void showColor(int row1, int column1, int row2, int column2){
+        System.out.println("Your first option is color: -- " 
+                           + board[row1][column1] + " --");
+        System.out.println("Your second option is color: -- "
+                           + board[row2][column2] + " --");
+    }
 }
